@@ -2,9 +2,11 @@ package com.sistemaescolar.exerciciosm1s8.services;
 
 import com.sistemaescolar.exerciciosm1s8.models.AlunoModel;
 import com.sistemaescolar.exerciciosm1s8.models.CursosModel;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class CursosServices {
     public CursosModel cadastrarCurso(CursosModel curso) throws Exception {
         if (validacao(curso)){
