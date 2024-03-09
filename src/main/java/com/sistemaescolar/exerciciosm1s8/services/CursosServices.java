@@ -14,7 +14,7 @@ public class CursosServices {
         }
         return null;
     }
-    public ArrayList<CursosModel> consultarAlunos(){
+    public ArrayList<CursosModel> consultarCursos(){
         return CursosModel.getListaDeCursos();
     }
 
