@@ -1,14 +1,17 @@
-package com.sistemaescolar.exerciciosm1s8.Classes;
+package com.sistemaescolar.exerciciosm1s8.models;
 
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 @Getter
 @Setter
-public class Aluno {
+public class AlunoModel {
+
+    public static ArrayList<AlunoModel> listaDeAlunos = new ArrayList<AlunoModel>();
 
     @Setter(value = AccessLevel.NONE)
     private int id;
@@ -21,9 +24,4 @@ public class Aluno {
         return proximoId++;
     }
 
-    public Aluno(int id, String nome, Date dataNascimento) {
-        this.id = gerarId();
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
-    }
 }

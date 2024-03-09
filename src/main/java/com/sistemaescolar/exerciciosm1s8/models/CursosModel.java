@@ -1,14 +1,11 @@
-package com.sistemaescolar.exerciciosm1s8.Classes;
+package com.sistemaescolar.exerciciosm1s8.models;
 
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-public class Cursos {
+public class CursosModel {
     @Getter
     @Setter
     public class Aluno {
-
-        @Setter(value = AccessLevel.NONE)
         private int id;
 
         private String nome;
