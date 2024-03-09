@@ -11,7 +11,7 @@ import java.util.Date;
 @Setter
 public class AlunoModel {
 
-    public static ArrayList<AlunoModel> listaDeAlunos = new ArrayList<AlunoModel>();
+    @Getter public static ArrayList<AlunoModel> listaDeAlunos = new ArrayList<AlunoModel>();
 
     @Setter(value = AccessLevel.NONE)
     private int id;
@@ -24,4 +24,9 @@ public class AlunoModel {
         return proximoId++;
     }
 
+    public static AlunoModel incluirNaLista(AlunoModel aluno){
+        aluno.id = gerarId();
+        AlunoModel.listaDeAlunos.add(aluno);
+        return aluno;
+    }
 }
