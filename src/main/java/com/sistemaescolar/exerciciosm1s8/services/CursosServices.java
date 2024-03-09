@@ -6,7 +6,7 @@ import com.sistemaescolar.exerciciosm1s8.models.CursosModel;
 import java.util.ArrayList;
 
 public class CursosServices {
-    public CursosModel cadastrarAluno(CursosModel curso) throws Exception {
+    public CursosModel cadastrarCurso(CursosModel curso) throws Exception {
         if (validacao(curso)){
             return CursosModel.incluirNaLista(curso);
         }
