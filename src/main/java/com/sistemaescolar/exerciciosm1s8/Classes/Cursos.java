@@ -3,9 +3,6 @@ package com.sistemaescolar.exerciciosm1s8.Classes;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
-
 public class Cursos {
     @Getter
     @Setter
