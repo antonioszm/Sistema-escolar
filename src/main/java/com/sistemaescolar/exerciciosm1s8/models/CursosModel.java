@@ -1,27 +1,33 @@
 package com.sistemaescolar.exerciciosm1s8.models;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+
+@Getter
+@Setter
 public class CursosModel {
     @Getter
-    @Setter
-    public class Aluno {
-        private int id;
+    public static ArrayList<CursosModel> listaDeCursos = new ArrayList<CursosModel>();
 
-        private String nome;
-        private String descricao;
-        private int cargaHoraria;
+    @Setter(value = AccessLevel.NONE)
+    private int id;
 
-        private static int proximoId = 1;
-        private static int gerarId() {
-            return proximoId++;
-        }
+    private String nome;
+    private String descricao;
+    private int cargaHoraria;
 
-        public Aluno(int id, String nome, String descricao, int cargaHoraria) {
-            this.id = gerarId();
-            this.nome = nome;
-            this.descricao = descricao;
-            this.cargaHoraria = cargaHoraria;
-        }
+    private static int proximoId = 1;
+    private static int gerarId() {
+        return proximoId++;
+    }
+
+    public static CursosModel incluirNaLista(CursosModel curso){
+        curso.id = gerarId();
+        CursosModel.listaDeCursos.add(curso);
+        return curso;
     }
 }
+

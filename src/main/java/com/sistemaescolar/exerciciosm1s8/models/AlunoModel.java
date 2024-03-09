@@ -11,7 +11,8 @@ import java.util.Date;
 @Setter
 public class AlunoModel {
 
-    @Getter public static ArrayList<AlunoModel> listaDeAlunos = new ArrayList<AlunoModel>();
+    @Getter
+    public static ArrayList<AlunoModel> listaDeAlunos = new ArrayList<AlunoModel>();
 
     @Setter(value = AccessLevel.NONE)
     private int id;
