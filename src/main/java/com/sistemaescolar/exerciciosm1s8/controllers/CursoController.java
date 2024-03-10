@@ -27,7 +27,7 @@ public class CursoController {
         return cursosServices.cadastrarCurso(curso);
     }
     @PostMapping("{id}/add-aluno")
-    public CursosModel post(@PathVariable int id, AlunoModel aluno) throws Exception {
+    public CursosModel post(@PathVariable int id, @RequestBody AlunoModel aluno) throws Exception {
         return cursosServices.matricularAluno(id, aluno.getId());
     }
 }
