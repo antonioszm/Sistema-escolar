@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -18,7 +19,7 @@ public class AlunoModel {
     private int id;
 
     private String nome;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
     private static int proximoId = 1;
     private static int gerarId() {
