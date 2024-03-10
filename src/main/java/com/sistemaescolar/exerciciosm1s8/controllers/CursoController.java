@@ -2,6 +2,7 @@ package com.sistemaescolar.exerciciosm1s8.controllers;
 
 import com.sistemaescolar.exerciciosm1s8.models.CursosModel;
 import com.sistemaescolar.exerciciosm1s8.services.CursosServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -9,7 +10,12 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("cursos")
 public class CursoController {
-    private CursosServices cursosServices;
+    private final CursosServices cursosServices;
+
+    public CursoController(CursosServices cursosServices) {
+        this.cursosServices = cursosServices;
+    }
+
     @GetMapping
     public ArrayList<CursosModel> get(){
         return cursosServices.consultarCursos();

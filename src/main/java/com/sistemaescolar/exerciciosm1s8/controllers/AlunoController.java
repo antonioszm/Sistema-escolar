@@ -10,7 +10,12 @@ import java.util.ArrayList;
 @RequestMapping("alunos")
 public class AlunoController {
 
-    private AlunoServices alunoServices;
+    private final AlunoServices alunoServices;
+
+    public AlunoController(AlunoServices alunoServices) {
+        this.alunoServices = alunoServices;
+    }
+
     @GetMapping
     public ArrayList<AlunoModel> get(){
         return alunoServices.consultarAlunos();
