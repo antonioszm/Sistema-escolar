@@ -19,6 +19,8 @@ public class CursosModel {
     private String descricao;
     private int cargaHoraria;
 
+    private ArrayList<AlunoModel> alunosMatriculados = new ArrayList<>();
+
     private static int proximoId = 1;
     private static int gerarId() {
         return proximoId++;
@@ -28,6 +30,10 @@ public class CursosModel {
         curso.id = gerarId();
         CursosModel.listaDeCursos.add(curso);
         return curso;
+    }
+
+    public static void matricularAluno(CursosModel curso, AlunoModel aluno){
+        curso.getAlunosMatriculados().add(aluno);
     }
 }
 

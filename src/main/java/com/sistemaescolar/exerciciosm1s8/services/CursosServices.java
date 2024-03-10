@@ -9,6 +9,13 @@ import java.util.ArrayList;
 
 @Service
 public class CursosServices {
+
+    private final AlunoServices alunoServices;
+
+    public CursosServices(AlunoServices alunoServices) {
+        this.alunoServices = alunoServices;
+    }
+
     public CursosModel cadastrarCurso(CursosModel curso) throws Exception {
         if (validacao(curso)){
             return CursosModel.incluirNaLista(curso);
@@ -25,4 +32,21 @@ public class CursosServices {
         }
         return true;
     }
+
+    public static CursosModel buscarPorId(int id) throws Exception {
+        for (CursosModel cursos : CursosModel.getListaDeCursos()){
+            if (cursos.getId() == id){
+                return cursos;
+            }
+        }
+        throw new Exception("Nenhum curso em cursos possui este id");
+    }
+
+    public CursosModel matricularAluno(int cursoId, int alunoId) throws Exception {
+        CursosModel curso = buscarPorId(cursoId);
+        AlunoModel aluno = alunoServices.buscarPorId(alunoId);
+        CursosModel.matricularAluno(curso, aluno);
+        return curso;
+    }
+
 }

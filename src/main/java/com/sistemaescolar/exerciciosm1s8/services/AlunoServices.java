@@ -1,6 +1,7 @@
 package com.sistemaescolar.exerciciosm1s8.services;
 
 import com.sistemaescolar.exerciciosm1s8.models.AlunoModel;
+import com.sistemaescolar.exerciciosm1s8.models.CursosModel;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -30,5 +31,14 @@ public class AlunoServices {
         }
 
         return true;
+    }
+
+    public static AlunoModel buscarPorId(int id) throws Exception {
+        for (AlunoModel aluno : AlunoModel.getListaDeAlunos()){
+            if (aluno.getId() == id){
+                return aluno;
+            }
+        }
+        throw new Exception("Nenhum aluno em alunos possui este id");
     }
 }
